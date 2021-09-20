@@ -56,7 +56,7 @@ In addition to chapters from *Statistical Rethinking*, there will be some additi
 
 # Course Organization
 
-The course topic for each week will be introduced through that week's readings. Therefore, **it is critical that you do the required reading *before* the relevant lecture.** Lectures will closely follow readings and are meant to solidify your understanding of the material. In lab sections, you will address problems in statistics and coding in an environment where help is readily available. Finally, homework assignments are your opportunity to demonstrate mastery of the material through independent work. Homework assignments will be released on Wednesday of each week and will be due the following Tuesday at 5 pm.
+The course topic for each week will be introduced through that week's readings. Therefore, **it is critical that you do the required reading *before* the relevant lecture.** Lectures will closely follow readings and are meant to solidify your understanding of the material. In lab sections, you will address problems in statistics and coding in an environment where help is readily available. Finally, homework assignments are your opportunity to demonstrate mastery of the material through independent work. Homework assignments will be released on Monday of each week (along with lecture) and will be due on the same day as your lab submissions.
 
 Those enrolled in the graduate course will also complete an additional research project assignment, with portions of the work due throughout the semester. Project details will be provided separately.
 
