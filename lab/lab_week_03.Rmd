@@ -11,6 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(dplyr)
 library(ggplot2)
+
+# Knit option to cut long lines of code
+require('formatR')
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 80), tidy = TRUE)
+
 ```
 
 
