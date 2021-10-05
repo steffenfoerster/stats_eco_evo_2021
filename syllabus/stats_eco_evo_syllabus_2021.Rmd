@@ -146,6 +146,8 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 
 - *Statistical Rethinking*: Preface, Chapter 1
 
+
+
 ## Week 02 (Sep 20) - Data Cleaning and More Advanced R
 
 **Required reading:**
@@ -153,6 +155,8 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 - Wickham, H. 2014. Tidy data.
 
 - "Introduction to dplyr." [Article link](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html)
+
+
 
 ## Week 03 (Sep 27) - Data Visualization
 
@@ -164,7 +168,27 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 
 - Martin, L. J. 2015. Mathematizing nature’s messiness: graphical representations of variation in ecology, 1930-present.  
 
-## Week 04 (Oct 04) - Bayesian Basics
+
+
+## Week 04 (Oct 04) - Introduction to Data
+
+**Required reading:**  
+
+- Vu & Harrington (2020): Introductory Statistics for the Life and Biomedical Sciences. 1st Edition. Chapter 1: Introduction to Data. Pages 14-49. 
+
+
+
+## Week 05 (Oct 11) - Introduction to Probability and Hypothesis Testing
+
+**Required reading:**  
+
+- Vu & Harrington (2020): Introductory Statistics for the Life and Biomedical Sciences. 1st Edition. Chapter 2: Probability. Pages 88 - 117. 
+
+- Cohen 1994: The earth is round, p<0.05. American Psychologist 49: 997-1003. Article on Canvas. 
+
+
+
+## Week 06 (Oct 18) - Introduction to Bayesian Ways of Thinking
 
 **Required reading:**  
 
@@ -176,15 +200,21 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 
 - McElreath, R. 2011. "The tyranny of Fisher." 
 
-## Week 05 (Oct 11) - Statistical Distributions and Summary Statistics
+**EEEB GR5005 Students: Research project prospectus due Oct 21**
 
-**Required reading:**  
+
+
+## Week 07 (Oct 25) - Bayesian Summary Statistics and Modeling Syntax
 
 - *Statistical Rethinking*: Chapter 3  
 
-**EEEB GR5005 Students: Research project prospectus due Oct 21**
 
-## Week 06 (Oct 18) - Gaussian Regression Models
+
+## Week 08 (Nov 1) - ACADEMIC HOLIDAY - NO LECTURE
+
+
+
+## Week 09 (Nov 08) - Gaussian Regression Models
 
 **Required reading:**  
 
@@ -192,26 +222,18 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 
 - *Statistical Rethinking*: Chapter 4  
 
-## Week 07 (Oct 25) - Regression, continued
-
-**Required reading:**  
-
-- *Statistical Rethinking*: Chapter 4  
-
-
-## Week 08 (Nov 1) - ACADEMIC HOLIDAY - NO LECTURE
-
 **EEEB GR5005 Students: Research project rough drafts due Nov 11**
 
 
-## Week 09 (Nov 8) - Multiple Regression
+
+## Week 10 (Nov 15) - Multiple Regression
 
 **Required reading:**  
 
 - *Statistical Rethinking*: Chapter 5
 
 
-## Week 10 (Nov 15) - Model selection
+## Week 11 (Nov 22) - Model selection
 
 **Required reading:**  
 
@@ -226,14 +248,14 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 - McGill, B. 2015. "Why AIC appeals to ecologist's lowest instincts." *Dynamic Ecology*. [Article link](https://dynamicecology.wordpress.com/2015/05/21/why-aic-appeals-to-ecologists-lowest-instincts/) (And be sure to see the many interesting comments.)
 
 
-## Week 11 (Nov 22) - Interactions
+## Week 12 (Nov 29) - Interactions
 
 **Required reading:**  
 
 - *Statistical Rethinking*: Chapter 8
 
 
-## Week 12 (Nov 29) - Link Functions and Poisson Regression
+## Week 13 (Dec 6) - Link Functions and Poisson/Binomial Regressions
 
 **Required reading:**  
 
@@ -242,14 +264,6 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 **Optional reading:**
 
 - *Statistical Rethinking*: Chapter 9 
-
-
-
-## Week 13 (Dec 6) - Binomial Regression
-
-**Required reading:**  
-
-- *Statistical Rethinking*: Chapter 11
 
 
 
