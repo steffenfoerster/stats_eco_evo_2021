@@ -1,0 +1,89 @@
+---
+title: "EEEB UN3005/GR5005  \nLab - Week 05"
+author: "USE YOUR NAME HERE"
+output: pdf_document
+fontsize: 12pt
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+# Knit option to cut long lines of code
+require('formatR')
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 80), tidy = TRUE)
+
+```
+
+
+
+# Random sampling
+
+## Exercise 1: Simulate a hypothetical population (5 points)
+
+Suppose you have a real world population of foxes with a true mean weight of 20 pounds, with a standard deviation of 5 pounds. And let's further suppose that we know that weight is normally distributed. That is a reasonable assumption, as you have already learned. We can simulate this population using one of the distribution functions built into R, in this case for the normal distribution. There are 4 such functions for many common distributions. For the normal distribution, they are `rnorm` for random generation function, `dnorm()` for density distribution function, `pnorm()` for cumulative probability distribution function, and `qnorm()` for quantile function. 
+
+Draw a random sample of 10,000 units from a normal distribution with mean 20 and standard deviation of 5. (1 point). 
+For the sake of the next exercises, this represents your simulated population. 
+
+Make a simple histogram of this population and check its mean and standard deviation (1 point). 
+Are the mean and SD exactly as specified? If not, why not? (1 point)
+What is the probability of obtaining a weight of exactly 17.5 pounds from this distribution? (1 point)
+What is the probability of obtaining a weight of 17.5 pounds of less from this distribution? (1 point)
+
+```{r}
+ 
+
+
+```
+
+
+
+
+
+## Exercise 2: Draw random samples and estimate probabilities (10 points)
+
+Now let's draw samples from this population, which simulates a set of weight measurements you have made on selected individuals that you were able to capture. Using the function `sample()`, draw one random observation first. What is the weight of your sampled fox? (1 point)
+
+```{r}
+
+
+
+```
+
+
+
+Now let's repeat this process a few times with increasing sample sizes. Start by creating a vector of numbers from 1:1,000 in steps of 1, using the `seq()` function. Call this vector `n` (1 point). 
+```{r}
+
+
+
+```
+
+
+Next, create an empty dataframe with two columns: `n`, `mean`. Lets call this `results`. You will populate this dataframe with the results from your loop, so it needs 1000 rows in each column, with NA values in them. You can do this with the function `data.frame()`. For repeating a value x number of times, you can use the `rep()` function. (1 points)
+```{r}
+
+
+```
+
+
+Now create a for loop that repeats the sampling from above, each time with the next sample size in your vector of sample sizes `n` you just created. Use regular R indexing notation to add the resulting mean to the dataframe, along with the corresponding element from your sample size vector. For example, the mean from your first run, starting at a sample size of 1, would go into first row, second column (if mean is your second column), and the sample size from your `n` vector would go into the first row, first column. (4 points)
+
+```{r}
+
+
+
+```
+
+
+Plot the calculated means at each sample size using a simple point plot (you can use base `plot()` or `gpplot()`). Describe the pattern that you observe (3 points). 
+
+Note: Run the previous chunk of code again and then plot it again and see how the distribution of points/means changes due to random sample variation. 
+```{r}
+
+
+```
+
+
+
+

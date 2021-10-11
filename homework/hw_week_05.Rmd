@@ -1,0 +1,101 @@
+---
+title: "EEEB UN3005/GR5005  \nHomework - Week 05"
+author: "USE THE NUMERIC PORTION OF YOUR UNI HERE"
+output: pdf_document
+fontsize: 12pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# Knit option to cut long lines of code
+require('formatR')
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 80), tidy = TRUE)
+
+
+```
+
+**Homework Instructions:** Complete this assignment by writing code in the code chunks provided. If required, provide written explanations below the relevant code chunks. When complete, knit this document within RStudio to generate a PDF file. Please review the resulting PDF to ensure that all content relevant for grading (i.e., code, code output, and written explanations) appears in the document. Upload this final homework document to CourseWorks by the due date.
+
+
+
+The following homework exercises build on the lab for this week. 
+If you don't still have the simulated population of fox weights in your environment, re-create the sample by going back to Exercise 1 in the lab. 
+
+
+
+## Exercise 1: Calculate probability of sample means (5 points)
+
+Let's simulate conducting a null hypothesis test of whether a random sample of 10 foxes is coming from a population with the true mean of 20 and a standard deviation of 5. You know it does, because you created the population, but each time you draw a random sample the mean is slightly different from 20. In real life we never know what the true population mean is. We can do this pretty easily through simulation. 
+
+This time, you will simulate a drawing of 10 individuals at a time, from that population, and you will repeat this many times over. Each time, the sample will be slightly different, as you have seen above when you re-ran your plot. The results will give us a distribution of possible means when drawing a sample of 10 individuals - a sampling distribution of means! From this sampling distribution, you can then calculate the probability of obtaining a given mean when drawing one random sample of 10 foxes.
+
+On you go. 
+
+First, create a loop similar to the one above, but this time, instead of changing sample size each time, keep the sample size at 10 foxes and repeat this random sample of 10 foxes 1,000 times. Create an empty vector called `means` first, and then store your results for each iteration in this vector. (2 points)
+
+Second, create a density curve of the resulting means using either the function `dens()` from the `rethinking` package. Alternatively, you can use `ggplot()` and its `geom_density()`, which would require a dataframe as input (note that you can coerce the means vector into a dataframe using the `as.data.frame()` function); if you do so, make sure to set the `adjust` parameter in the `geom_density()` function to 0.5 to avoid too much smoothing. (1 point). 
+
+From the graph, read off the approximate probability of obtaining a mean of 17.5 pounds with a sample of 10 foxes from a population with a true mean of 20 and a standard deviation of 5 (our simulated true population). (1 point)
+
+If you assume a threshold of p = 0.05 below which you would reject the hypothesis that the these 10 foxes come from a population with mean of 20 and standard deviation of 5 (meaning, the simulated mean is just too unlikely to happen from the population you generated), what does the value of p that you read off the curve tell you? (1 point)
+
+```{r}
+
+
+```
+
+
+
+
+
+
+
+## Exercise 2: Examine the effects of sample size (5 points)
+
+In the previous example, your sample size of 10 foxes at each draw was pretty small. Lets increase it!  
+
+Start by setting a seed on the first line of your code chunk with `set.seed()`, pick any number you like inside the function. This simply sets the start point of the random numbers selected when you do simulation, which keeps the different runs (and the properties of the distributions) more comparable. 
+
+Next, copy your code from exercise 1 and change the sample size of foxes per draw from 10 to 100, plot the density distribution again, and calculate the mean and standard deviation of your means (yes, the mean of means!). Also do so for the sample size of 10 that you used above. What happens to the mean and standard deviation with this increased sample size? (2 points)
+
+Read off the approximate probability of obtaining a sample mean of 17.5 from this new distribution. Would you change your conclusion about whether this sample is likely to have come from a population with mean = 20 and sd = 5? What might this example illustrate about the use of p-values in NHST? (3 points)
+
+
+```{r}
+
+
+
+```
+
+
+
+
+
+
+Exercise 3: Calculating probabilities (3 points).
+
+The following question is taken from your readings for this week, exercise 2.19 on page 133. You will not need to write any code for this, so please just write your answers below the question. 
+
+A 2013 analysis conducted by the Pew Research Center found that 60% of survey respondents agree with the statement "humans and other living things have evolved over time" while 33% say that "humans and other living things have existed in their present form since the beginning of time" (7% responded "don’t know"). They also found that there are differences among partisan groups in beliefs about evolution. While roughly two-thirds of Democrats (67%) and independents (65%) say that humans and other living things have evolved over time, 48% of Republicans reject the idea of evolution. Suppose that 45% of respondents identified as Democrats, 40% identified as Republicans, and 15% identified as political independents. The survey was conducted among a national sample of 1,983 adults.
+
+
+Question 1: Suppose that a person is randomly selected from the population and found to identify as a Democrat. What is the probability that this person does not agree with the idea of evolution? Write down your calculation using probability notation (e.g., P(A|B) stands for the probability of A given B) and define your variables (e.g., Let E be for agreeing with evolution and D being a Democrat). 
+
+
+Answer: 
+
+
+
+
+Question 2: Suppose that a political independent is randomly selected from the population. What is the probability that this person does not agree with the idea of evolution?
+
+Answer: 
+
+
+
+Question 3: Suppose that a person is randomly selected from the population and found to identify as a Republican. What is the probability that this person agrees with the idea of evolution?
+
+Answer: 
+
+
