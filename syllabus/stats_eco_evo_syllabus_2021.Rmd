@@ -220,9 +220,9 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 
 - McElreath, R. 2017. "First World modeling problems." [Article link](http://elevanth.org/blog/2017/08/28/first-world-modeling-problems/)
 
-- *Statistical Rethinking*: Chapter 4  
+- *Statistical Rethinking*: Chapter 4, excluding section 4.5
 
-**EEEB GR5005 Students: Research project rough drafts due Nov 11**
+**EEEB GR5005 Students: Research project rough drafts due Nov 18**
 
 
 
