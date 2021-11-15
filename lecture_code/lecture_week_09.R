@@ -295,16 +295,17 @@ dens(
 
 
 ### Predictions of mean heights ####
+# Each column contains 1000 predicted means for one weight value
 weights <- seq(25, 70, 1)
 mu <- link(m4.2, data = data.frame(weight = weights))
 View(mu)
 
-mu.mean = apply(mu, 2, mean)
+mu.mean = apply(mu, 2, mean) # 2 for column means, 1 for row means
 mu.PI = apply(mu, 2, PI, prob = 0.89)
 
 plot(height ~ weight, data = kungdata, col = col.alpha("blue", 0.5))
 lines(weights, mu.mean) # base function that connects two coordinates
-shade(mu.PI, weights) # rethinking function that plots 
+shade(mu.PI, weights) # rethinking function that plots intervals
 
 
 ### Predictions of simulated heights ####
@@ -327,6 +328,8 @@ shade(mu.HPDI, weights)
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ## Use PPD to check model fit to data ####
 ## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Generate a plot of 100 predicted height distributions using our model
 plot(NULL, ylab = "density", xlab = "height", 
      xlim = c(100, 200), ylim = c(0, 0.05))
 for(i in 1:100){
@@ -334,8 +337,30 @@ for(i in 1:100){
                   col = alpha("seagreen", 0.5), 
                   add = TRUE)}
 }
+## Overlay this with the actual height distribution in our data
 dens(kungdata$height, lwd = 3, add = TRUE)
 
+
+
+## To see an example where the data do not match PPD
+## Chick weights based on time, sample data
+data("ChickWeight")
+dat <- filter(ChickWeight, Time > 7)
+m4.test <- quap(data = dat, 
+             alist(weight ~ dnorm(mu, sigma),
+                   mu <- a + bt*Time,
+                   a ~ dnorm(0, 100),
+                   bt ~ dnorm(0, 1),
+                   sigma ~ dexp(1)))
+sim.w <- sim(m4.test, n = 1000)
+plot(NULL, ylab = "density", xlab = "weight", 
+     xlim = c(-100, 400), ylim = c(0,0.01))
+for(i in 1:100){
+  if(i > 1){ dens(sim.w[i,],  
+                  col = alpha("seagreen", 0.5), 
+                  add = TRUE)}
+}
+dens(ChickWeight$weight, lwd = 3, add = TRUE)
 
 
 
