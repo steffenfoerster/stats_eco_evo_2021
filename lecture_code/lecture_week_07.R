@@ -333,6 +333,6 @@ simplehist(preds, xlim = c(0, 10))
 # there would still be variation in our outcomes because
 # the data-generating process is subject to outcome 
 # uncertainty
-test.outcomes <- rbinom(10000, size = 10, prob = 0.8)
+test.outcomes <- rbinom(10000, size = 10, prob = 0.6)
 
 simplehist(test.outcomes, xlim = c(0, 10))
