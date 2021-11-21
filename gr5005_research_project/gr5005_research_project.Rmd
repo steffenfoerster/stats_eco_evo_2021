@@ -1,6 +1,6 @@
 ---
 title: "| EEEB GR5005\n| Graduate Level Research Project"
-author: "Columbia University - Fall 2020"
+author: "Columbia University, Fall 2021"
 output: pdf_document
 fontsize: 12pt
 ---
@@ -19,21 +19,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Research Project Overview
 
-For the graduate level version of this course (EEEB GR5005), all students will prepare a short research paper. The emphasis of this research project is on the data you choose to analyze and your analytical methods. Basically, this project is a scientific paper largely reduced to its analytical core.
+For the graduate level version of this course (EEEB GR5005), all students will prepare a short research paper. The emphasis of this research project is on the data you choose to analyze and your analytic methods. Basically, this project is a scientific paper largely reduced to its analytic core.
 
 I envision the final research project format as follows:
 
 - A short introduction of the relevant background information for the study. This should be roughly a 1-2 paragraph section (not an extensive literature review) ending with your specific project objectives or hypotheses. 
 
-- Detailed sections on analytical methods and results. These should be modeled after the methods and results sections of a scientific paper. As such, you'll likely want to include some tables or figures. Similarly, describe your own work with the clarity and rigor you would expect to find in the scientific literature.
+- Detailed sections on analytic methods and results. These should be modeled after the methods and results sections of a scientific paper. As such, you'll likely want to include some tables or figures. Similarly, describe your own work with the clarity and rigor you would expect to find in the scientific literature.
 
-- A short discussion on your data analysis (1-2 paragraphs). If your analysis uses statistical techniques not taught in class, I am interested in having some informal discussion about those here as well. Briefly, how did you come to the conclusion this was the best way to analyze your data? How did you implement the techniques in R? If you used functions from an R package, how did you decide on which package(s) to use? Conceptually, do the statistical methods you chose have some relation to linear regression modeling?
+- A short discussion on your data analysis (1-2 paragraphs). Your analyses should make use of concepts and techniques learned in this class, i.e. follow Bayesian methodology. If you think that one or more aspects of your analyses require methods not discussed in this class, please discuss this with me as soon as you realize. For some projects, the move beyond Bayesian methods may be justified based on the lack of comparable Bayesian models or the fact that Bayesian implementations are well beyond the scope of this class. However, complex non-Bayesian alternatives may have a steep learning curve as well and are not easily implemented or understood. Thus, when in doubt, keep it simple and attempt to stay within the realms of what we have covered in this class. 
 
 There is no strict length minimum or maximum for the project paper, but most students, depending on the scope of their research question(s), should be able to address all of the requirements in about 5-10 pages of written text (double-spaced), not including figures. 
 
 **I expect that most students will choose a research project topic that is related to their thesis, and I hope that the work you do for this project can directly benefit your thesis efforts.** However, a connection to a larger research project is not a strict requirement. If you are not preparing a thesis, you can choose any topic of interest. If you have some question independent of a thesis that you would like to explore, you are also welcome to choose that. If you are in the beginning phases of your thesis research and have ideas but no data of your own, feel free to use data from your advisor, collaborators, and/or publicly available datasets. Running statistical analyses on data that are similar to what you might collect can be a good “test run” of the approaches you will employ when you do have your own data. It is even possible to simulate data for the purposes of this term project if you're so inclined.
 
-I will also review the R code you produce as part of this project. It's increasingly expected that published scientific papers are accompanied by relevant statistical code, so the general aim here is to encourage you to carefully prepare your code as you would any other form of scientific communication. The purpose of sharing code is to enable reproducibility. As such, your code should be well-organized and well-commented. 
+I will also review the R code you produce as part of this project. It's increasingly expected that published scientific papers are accompanied by relevant statistical code, so the general aim here is to encourage you to carefully prepare your code as you would any other form of scientific communication. The purpose of sharing code is to enable reproducibility. As such, your code should be well-organized and well-commented. I strongly recommend keeping all your code in one self-contained mark-down document that starts with the loading of all required libraries and all the data you will need, similar to what you are used to for your course assignments. You will know if it is fully self-contained when you try to knit it to a PDF. 
 
 **All research project submissions should be uploaded to CourseWorks by 11:59 pm on the dates indicated below.**
 
@@ -44,7 +44,7 @@ As a first step in the research project process, each of you will submit a short
 
 The overall goal of the project prospectus is simply to ensure that you have a plan for your research project early on in the semester. It will also allow me to best assist you towards successful completion of the project.
 
-- **The research project prospectus will be due on Thursday, October 22.** 
+- **Refer to Canvas, syllabus and/or email announcements for due date!** 
 
 
 ## Part 2: Rough Draft (10% of Overall Project Grade)
@@ -53,12 +53,12 @@ In order to help everyone make good progress towards their project goals, I will
 
 In addition, **please include a short paragraph (2-5 sentences) at the end of your project rough draft with your own evaluation of how your project does or does not meet the standards outlined in the rubric below.** This paragraph does not need to appear in your project final draft. It is intended to help you think at this intermediate project stage about which parts of the project you already have a good handle on, and, by contrast, those elements that may need more work. I want to make sure you have a good understanding of the project expectations *before* you turn in the final draft.
 
-- **The research project rough draft will be due on Thursday, November 05.** But you're welcome to submit your draft earlier than the official deadline, if you'd like, and I can try to give you more rapid feedback.
+- **Refer to Canvas, syllabus and/or email announcements for due date!** But you're welcome to submit your draft earlier than the official deadline, if you'd like, and I can try to give you more rapid feedback.
 
 
 ## Part 3: Final Draft (85% of Overall Project Grade)
 
-- **The research project final draft will be due on Thursday, December 10.**
+- **Refer to Canvas, syllabus and/or email announcements for due date!** 
 
 
 \newpage
@@ -72,7 +72,7 @@ In addition, **please include a short paragraph (2-5 sentences) at the end of yo
 **2) Methods (25 points)**
 
 - describes data collection and processing procedures
-- describes the statistical techniques and/or software used for the analyses
+- describes the statistical techniques and R packages used for the analyses
 - methods are described at a level of detail such that a scientifically-savvy reader could replicate the analyses
 
 **3) Results (25 points)**
