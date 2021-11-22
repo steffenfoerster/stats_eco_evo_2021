@@ -557,10 +557,15 @@ m5.9 <- quap(data = d,
     sigma ~ dexp(1)
   )
 )
+precis(m5.9, depth = 2)
+
 coeftab_plot(coeftab(m5.9), 
              pars = 1:length(levels(d$clade)),
              labels = levels(d$clade),
              xlab = "expected kcal (std)")
 
-
+### To get expected difference between any pair of clades
+post <- extract.samples(m5.9)
+post$diff <- post$a[,1] - post$a[,2]
+precis(post, depth = 2)
 
