@@ -234,7 +234,7 @@ m5.5 <- quap(
   )
 )
 precis(m5.5, digits = 3)
-# Then rerun lines 210 through 219
+# Then rerun prior predictive plot
 
 
 
@@ -245,15 +245,20 @@ precis(m5.5, digits = 3)
 
 # List of neocortex percentages to simulate at
 xseq <- seq(from = -3, to = 3, length.out = 100)
+
+# Get model predicted mean kcal for each of the 100 neocortex prop values
 mu <- link(m5.5, data = list(N = xseq))
 mu.mean <- apply(mu, 2, mean)
 mu.PI <- apply(mu, 2, PI)
+
+# Plot kcal over neocortex proportion
 plot(K ~ N, data = dcc)
 lines(xseq, mu.mean, lwd = 2)
 shade(mu.PI, xseq)
 
 
-### You could plot your posterior estimates and PIs
+### You could plot your posterior distributions and HPDIs (or PIs)
+
 post1 <- extract.samples(m5.5, n = 10000)
 # Plot posterior samples
 dens(post1$a, main = "Posterior for a (intercept)", xlab = "a",
