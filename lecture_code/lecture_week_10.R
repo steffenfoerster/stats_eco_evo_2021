@@ -49,7 +49,7 @@ mu <- link(m5.1, post = prior, data = list(A = c(-2,2)))
 plot(NULL, xlim = c(-2,2), ylim=c(-2,2), 
      xlab = "Median age at marriage", ylab = "Divorce rate (%)")
 for(i in 1:50){
-  lines(c(-2,2), mu[i,],
+    lines(c(-2,2), mu[i,],
         col = col.alpha("blue", 0.4))
 }
 
@@ -184,6 +184,10 @@ m5.5 <- quap(
 # Remove NAs in 3 variables of interest
 dcc <- d[complete.cases(d$K, d$N, d$M), ]
 
+
+
+### RECAP 1: Prior predictive plots ####
+
 # Rerun
 m5.5 <- quap(
   data = dcc,
@@ -191,7 +195,7 @@ m5.5 <- quap(
     K ~ dnorm(mu, sigma),
     mu <- a + bN * N,
     a ~ dnorm(0, 1),
-    bN ~ dnorm(0, 0.5),
+    bN ~ dnorm(0, 1),
     sigma ~ dexp(1)
   )
 )
@@ -229,11 +233,13 @@ m5.5 <- quap(
     sigma ~ dexp(1)
   )
 )
+precis(m5.5, digits = 3)
 # Then rerun lines 210 through 219
 
 
 
 
+### RECAP 2: Posterior predictive plots ####
 
 ### Plot posterior predictions
 
@@ -248,12 +254,13 @@ shade(mu.PI, xseq)
 
 
 ### You could plot your posterior estimates and PIs
-# post1 <- extract.samples(m5.5, n = 10000)
-# # Plot posterior samples
-# dens(post1$a, main = "Posterior for a (intercept)", xlab = "a", 
-#      show.HPDI = 0.9)
-# dens(post1$bn, main = "Posterior for bn (slope)", xlab = "bn",
-#   show.HPDI = 0.9) 
+post1 <- extract.samples(m5.5, n = 10000)
+# Plot posterior samples
+dens(post1$a, main = "Posterior for a (intercept)", xlab = "a",
+     show.HPDI = 0.9)
+dens(post1$bn, main = "Posterior for bn (slope)", xlab = "bn",
+  show.HPDI = 0.9)
+
 
 
 
@@ -265,8 +272,8 @@ m5.6 <- quap(
   alist(
     K ~ dnorm(mu, sigma),
     mu <- a + bM * M,
-    a ~ dnorm(0, 0.2),
-    bM ~ dnorm(0, 0.5),
+    a ~ dnorm(0, 1),
+    bM ~ dnorm(0, 1),
     sigma ~ dexp(1)
   )
 )
@@ -288,7 +295,7 @@ m5.7 <- quap(
   alist(
     K ~ dnorm(mu, sigma),
     mu <- a + bN * N + bM * M,
-    a ~ dnorm(0, 0.2),
+    a ~ dnorm(0, 0.5),
     bN ~ dnorm(0, 0.5),
     bM ~ dnorm(0, 0.5),
     sigma ~ dexp(1)
@@ -329,15 +336,13 @@ coeftab_plot(coeftab(m5.5, m5.6, m5.7), par = c("bM", "bN"))
 
 
 
-
 ### Visualization techniques ####
 ### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### . --- Posterior predictive plot ####
-par(mfrow = c(1, 1))
-
 mu <- link(m5.7) # default is 1,000 predictions of mean
 # Note when no data range specified, uses what it finds in model data
+# In this case, it gives us 17 predicted mean kcal for 17 taxa
 mu_mean <- apply(mu, 2, mean)
 mu_PI <- apply(mu, 2, PI)
 
@@ -353,14 +358,17 @@ for(i in 1:nrow(dcc)){
   lines(rep(dcc$K[i],2), mu_PI[,i], col = rangi2)
 }
 
-# Label some outliers (interactive)
-identify(x = dcc$K, y = mu_mean, labels = dcc$species)
+### Label some outliers (interactive)
+# identify(x = dcc$K, y = mu_mean, labels = dcc$species)
+
+
+
+
+### Continue on 11/22: Visualizing results ####
 
 
 
 ### . --- Counterfactual plots ####
-par(mfrow = c(1, 1))
-
 
 # Hold N = 0
 xseq = seq(from = min(dcc$M)-0.15, 
@@ -470,8 +478,8 @@ precis(m.lbm.residual)
 
 
 
-### Categorical predictor variables ####
-### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Binary categorical predictor variable ####
+### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 # Import Howell data
@@ -487,22 +495,22 @@ d$male
 
 # Fit a linear regression using sex as a predictor of 
 # height
-m5.15 <- quap(
+m5.8 <- quap(
   data = d,
   alist(
     height ~ dnorm(mu, sigma),
     mu <- a + bm * male,
     a ~ dnorm(178, 100),
     bm ~ dnorm(0, 10),
-    sigma ~ dunif(0, 50)
+    sigma ~ dexp(1)
   )
 )
 
 # Summarize the fit model
-precis(m5.15)
+precis(m5.8)
 
 # Generate posterior samples
-post <- extract.samples(m5.15, n = 10000)
+post <- extract.samples(m5.8, n = 10000)
 
 # To visualize the expected mean height value for females
 dens(
@@ -519,5 +527,35 @@ dens(
   add = TRUE,
   show.HPDI = 0.5
 )
+
+
+
+
+### Categorical predictor variable with many levels ####
+### ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+data(milk)
+d <- milk
+levels(d$clade)
+
+# Change clade to numeric index variable
+d$clade_id <- as.numeric(d$clade)
+
+# Standardize milk energy content
+d$K <- scale(d$kcal.per.g)
+
+
+m5.9 <- quap(data = d, 
+  alist(
+    K ~ dnorm(mu, sigma),
+    mu <- a[clade_id],
+    a[clade_id] ~ dnorm(0, 0.5),
+    sigma ~ dexp(1)
+  )
+)
+coeftab_plot(coeftab(m5.9), 
+             pars = 1:length(levels(d$clade)),
+             labels = levels(d$clade),
+             xlab = "expected kcal (std)")
+
 
 

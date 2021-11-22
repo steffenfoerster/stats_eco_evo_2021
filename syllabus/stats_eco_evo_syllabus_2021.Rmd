@@ -222,7 +222,6 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 
 - *Statistical Rethinking*: Chapter 4, excluding section 4.5
 
-**EEEB GR5005 Students: Research project rough drafts due Nov 18**
 
 
 
@@ -233,7 +232,38 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 - *Statistical Rethinking*: Chapter 5
 
 
-## Week 11 (Nov 22) - Model selection
+
+## Week 11 (Nov 22) - Multiple Regression, continued
+
+**Required reading:**  
+
+- *Statistical Rethinking*: Chapter 5
+
+**EEEB GR5005 Students: Research project rough drafts due Nov 26**
+
+
+
+## Week 12 (Nov 29) - Interactions
+
+**Required reading:**  
+
+- *Statistical Rethinking*: Chapter 8
+
+
+
+## Week 13 (Dec 6) - Link Functions and Poisson/Binomial Regressions
+
+**Required reading:**  
+
+- *Statistical Rethinking*: Chapters 10-11 (Generalized Linear Model, Poisson Model)
+
+**Optional reading:**
+
+- *Statistical Rethinking*: Chapter 9 (Markov Chain Monte Carol)
+
+
+
+## Week 14 (Dec 13) - Model selection
 
 **Required reading:**  
 
@@ -247,36 +277,7 @@ For homework assignments, I encourage you to discuss the problem sets and potent
 
 - McGill, B. 2015. "Why AIC appeals to ecologist's lowest instincts." *Dynamic Ecology*. [Article link](https://dynamicecology.wordpress.com/2015/05/21/why-aic-appeals-to-ecologists-lowest-instincts/) (And be sure to see the many interesting comments.)
 
-
-## Week 12 (Nov 29) - Interactions
-
-**Required reading:**  
-
-- *Statistical Rethinking*: Chapter 8
-
-
-## Week 13 (Dec 6) - Link Functions and Poisson/Binomial Regressions
-
-**Required reading:**  
-
-- *Statistical Rethinking*: Chapters 10-11  
-
-**Optional reading:**
-
-- *Statistical Rethinking*: Chapter 9 
-
-
-
-## Week 14 (Dec 13) - Introduction to Multilevel Modeling
-
-**Required reading:**  
-
-- McElreath, R. 2017. "Multilevel regression as default." [Article link](http://elevanth.org/blog/2017/08/24/multilevel-regression-as-default/)
-
-- *Statistical Rethinking*: Chapter 13
-
-**EEEB GR5005 Students: Research projects due Dec 16**
-
+**EEEB GR5005 Students: Final research project report due Dec 23**
 
 
 
