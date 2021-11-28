@@ -405,7 +405,8 @@ plot(NULL, xlim = range(dcc$N), ylim = range(dcc$K),
      ylab = "kcal per g (std)")
 lines(xseq, mu_mean, lwd = 2)
 shade(mu_PI, xseq)
-
+### Check code for adding raw data
+# plot(dcc$K ~ dcc$N, add=TRUE)
 
 
 
@@ -505,7 +506,7 @@ m5.8 <- quap(
   alist(
     height ~ dnorm(mu, sigma),
     mu <- a + bm * male,
-    a ~ dnorm(178, 100),
+    a ~ dnorm(178, 10),
     bm ~ dnorm(0, 10),
     sigma ~ dexp(1)
   )
@@ -541,6 +542,7 @@ dens(
 data(milk)
 d <- milk
 levels(d$clade)
+unique(d$clade)
 
 # Change clade to numeric index variable
 d$clade_id <- as.numeric(d$clade)
@@ -566,6 +568,6 @@ coeftab_plot(coeftab(m5.9),
 
 ### To get expected difference between any pair of clades
 post <- extract.samples(m5.9)
-post$diff <- post$a[,1] - post$a[,2]
+post$diff <- post$a[,2] - post$a[,3]
 precis(post, depth = 2)
 
