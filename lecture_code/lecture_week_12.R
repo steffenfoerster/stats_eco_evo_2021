@@ -43,7 +43,7 @@ m8.1 <- quap(
   ),
   data = dd)
 
-precis(m8.1, prob = 0.89)
+precis(m8.1, prob = 0.89, digits = 4)
 
 
 
@@ -135,15 +135,15 @@ precis(m8.2.2, depth = 2)
 cf.Africa <- data.frame(cont_africa = 1, rugged_std = rugvalues)
 cf.NotAfrica <- data.frame(cont_africa = 0, rugged_std = rugvalues)
 
-mu.Africa <- link(m8.2.2, data = cf.Africa)
+mu.Africa <- link(m8.2.1, data = cf.Africa)
 mu.Africa.mean <- apply(mu.Africa, 2, mean)
 mu.Africa.PI <- apply(mu.Africa, 2, PI, prob = 0.97)
 
-mu.NotAfrica <- link(m8.2.2, data = cf.NotAfrica)
+mu.NotAfrica <- link(m8.2.1, data = cf.NotAfrica)
 mu.NotAfrica.mean <- apply(mu.NotAfrica, 2, mean)
 mu.NotAfrica.PI <- apply(mu.NotAfrica, 2, PI, prob = 0.97)
 
-par(mfrow=c(1,1))
+# par(mfrow=c(1,1))
 plot(log_gdp_std ~ rugged_std, data = dd,
      xlab = "Terrain Ruggedness Std",
      ylab = "log(GDP year 2000) Std",
@@ -277,54 +277,4 @@ for(c in 1:4){
 dev.off() # reset graphics device
 
 
-
-
-
-
-
-
-# Introducing MCMC estimation ####
-
-# Trim data to ensure we don't run into any Stan issues
-dd.trim <- list(
-  log_gdp_std = dd$log_gdp_std, 
-  rugged_std = dd$rugged_std,
-  cid = as.integer(dd$cid)
-  )
-
-
-
-# Fit the model using ulam()
-m8.5 <- ulam(
-  data = dd.trim,
-  alist(
-    log_gdp_std ~ dnorm(mu, sigma),
-    mu <- a[cid] + b[cid] * rugged_std,
-    a[cid] ~ dnorm(1, 0.1),
-    b[cid] ~ dnorm(0, 0.1),
-    sigma ~ dexp(1)
-  ), 
-  chains = 4
-)
-
-# Compare model fits using precis()
-precis(m8.3, prob = 0.97, depth = 2)
-precis(m8.5, prob = 0.97, depth = 2)
-
-
-# Other Stan fit model summary functions
-show(m8.5)
-summary(m8.5)
-pairs(m8.5)
-
-
-
-# Parameter trace plots
-
-# Using the rethinking plotting method
-traceplot(m8.4, chains = 1)
-traceplot(m8.4)
-
-# Using the rstan plotting method
-rstan::traceplot(m8.4@stanfit)
 
