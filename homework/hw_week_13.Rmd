@@ -1,0 +1,73 @@
+---
+title: "EEEB UN3005/GR5005  \nHomework - Week 13"
+author: "USE THE NUMERIC PORTION OF YOUR UNI HERE"
+output: pdf_document
+fontsize: 12pt
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+library(rethinking)
+library(dplyr)
+library(ggplot2)
+
+# Knit option to cut long lines of code
+require('formatR')
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 80), tidy = TRUE)
+
+```
+
+
+**Homework Instructions:** Complete this assignment by writing code in the code chunks provided. If required, provide written explanations **below** the relevant code chunks. Replace "USE THE NUMERIC PORTION OF YOUR UNI HERE" in the document header with the numbers appearing in your UNI. When complete, knit this document within RStudio to generate a PDF file. Please review the resulting PDF to ensure that all content relevant for grading (i.e., code, code output, and written explanations) appears in the document. 
+
+
+  
+  
+After loading the `rethinking` package, if you run `data(salamanders)` you'll find a dataset of salamander counts (the `SALAMAN` variable) recorded at 47 forest plots. Assuming a common exposure across forest plots (i.e., if data was collected at a regular interval for all plots), then this count data is ideal for modeling as a Poisson variable.
+
+
+
+
+## Problem 1 (5 points)
+
+Model the relationship between salamander count (`SALAMAN`) and percentage of vegetation cover on the forest floor (`PCTCOVER`) using a Poisson generalized linear model (GLM) and `quap()`. Use priors of `dnorm(0, 10)` and explicit start values of 0 for all model parameters. (2 points)
+
+Use `precis()` to report the 97% PI of fit model parameters. What does your model suggest about the directional effect of vegetation cover on salamander counts? (1 point) What does the numerical value reported for the slope mean in terms of change in salamander counts for a given change in vegetation cover? (2 points)
+
+```{r}
+
+
+```
+
+
+
+
+## Problem 2 (3 points)
+
+Refit the same model as in Problem 1, this time using `ulam()`, specifying 4 MCMC chains. You do not need to define starting values here (though it won't hurt either). (2 points)
+
+After you've fit the model, report the 97% HPDIs of model parameters using `precis()`, and use a method of your choice (two were shown in lecture) to display parameter trace plots from the fit model. (1 point)
+
+```{r}
+
+
+```
+
+
+
+
+
+## Problem 3 (7 points)
+
+Generate a plot showing the raw salamander count data (against vegetation cover) along with model-based predictions from the Poisson GLM you fit in Problem 2. More specifically, plot a line showing the mean predicted salamander count and a shaded 97% HPDI interval for the predictions. (3 points)
+
+As a hint, use `link()` to generate your predictions. This will require counterfactual data, so your prediction generation process will start by defining a sequence of predictor values to generate predictions for. From there, everything should be very similar to examples you've encountered previously in class.
+
+Using your plot to help with interpretation, how does the model perform well and how does it perform poorly? (4 points, 2 for each of "well" and "poor" with proper explanation)
+
+```{r}
+
+
+```
+
