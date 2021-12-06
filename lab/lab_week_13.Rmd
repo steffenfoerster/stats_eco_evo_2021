@@ -1,0 +1,63 @@
+---
+title: "EEEB UN3005/GR5005  \nLab - Week 13"
+author: "USE YOUR NAME HERE"
+output: pdf_document
+fontsize: 12pt
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+library(rethinking)
+library(dplyr)
+library(ggplot2)
+```
+
+
+
+# Link Functions and Poisson Regression
+
+
+## Exercise 1: Importing and Visualizing the Kline Dataset
+
+Import the Kline dataset that was shown in the *Statistical Rethinking* text and lecture. Add a log population size variable `pop` to the data frame for use as a predictor variable. Now, visualize the relationship between `pop` and `total_tools` using a scatter plot in `ggplot()`. In addition, add the layer `geom_smooth(method = "lm", se = FALSE, fullrange = TRUE)` to your plot in order to display a linear trend line on top of the raw data.
+
+```{r}
+
+
+```
+
+
+
+
+
+
+## Exercise 2: Fitting a Poisson GLM and a Standard Linear Model
+
+First, fit a Poisson GLM to the Kline data (with `ulam()`, using 4 chains and 2,000 iterations), using `pop` as a predictor of total tool count. As priors, pick `dnorm(0, 100)` for the intercept, and `dnorm(0, 10)` for the slope coefficient. After fitting the model, use `precis()` to display the 97% PIs for all model parameters.
+
+Now, fit a standard linear model (with a Gaussian outcome distribution) to the Kline data, again using `pop` as a predictor of total tool count. Use the same priors as above for intercept and slope, as well as `dexp(5)` for the standard deviation. Use `precis()` to display the 97% PIs for all model parameters after you've fit the model.
+
+```{r}
+
+
+
+```
+ 
+ 
+ 
+ 
+ 
+ 
+## Exercise 3: Comparing Model-based Predictions
+
+Imagine we discover a new Oceanic island with a population of 150 people (log population size of 5.01). Using `sim()`, generate predictions for total tool count on this island for both the Poisson GLM and the standard linear model. Output 20 of the predictions from each model (using `head()`, for example) just to see what they look like, and report the mean value of the predictions generated from both models. 
+
+Which model suggests a higher total tool count for this hypothetical island? Do you think both of these models generate sensible predictions for total tool count? Why or why not?
+
+```{r}
+
+
+```
+
