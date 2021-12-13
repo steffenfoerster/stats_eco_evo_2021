@@ -343,7 +343,7 @@ shade(preds.p.PI, 1:4)
 
 
 ## AGGREGATED BINOMIAL GLM ####
-
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Snow goose color binomial models
 
@@ -371,7 +371,7 @@ m13.4 <- ulam(
   alist(
     blue_geese ~ dbinom(size = total_geese, prob = p),
     logit(p) <- a + b_site_B * site_B + b_site_C * site_C,
-    a ~ dnorm(0, 2),
+    a ~ dnorm(0, 0.5),
     b_site_B ~ dnorm(0, 1),
     b_site_C ~ dnorm(0, 1)
   ), 
